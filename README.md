@@ -2,7 +2,7 @@
 
 A comprehensive invoice generator API built with NestJS and TypeScript, featuring automatic calculations, PDF export, and RESTful endpoints.
 
-## 🚀 Features
+## Features
 
 - **Invoice Creation**: Create invoices with customer details and line items
 - **Automatic Calculations**: Subtotal, tax, and total are calculated automatically
@@ -11,12 +11,12 @@ A comprehensive invoice generator API built with NestJS and TypeScript, featurin
 - **Validation**: Comprehensive input validation using class-validator
 - **RESTful API**: Clean, well-structured REST endpoints
 
-## 📋 Prerequisites
+## Prerequisites
 
 - Node.js (v16 or higher)
 - npm or yarn
 
-## 🛠️ Installation
+## Installation
 
 1. Clone the repository:
 ```bash
@@ -36,7 +36,7 @@ npm run dev
 
 The API will be available at `http://localhost:3000`
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 src/
@@ -52,7 +52,7 @@ src/
         └── invoice.entity.ts # Domain entities
 ```
 
-## 📚 API Documentation
+## API Documentation
 
 ### Base URL
 ```
@@ -137,7 +137,7 @@ Retrieves a specific invoice by its ID.
 
 Downloads the invoice as a PDF file.
 
-## 🔧 Configuration
+## Configuration
 
 ### Environment Variables
 - `PORT`: Server port (default: 3000)
@@ -146,48 +146,10 @@ Downloads the invoice as a PDF file.
 - Default tax rate: 10% (0.1)
 - Can be customized per invoice in the request body
 
-## 🧪 Testing the API
-
-### Using cURL
-
-1. **Create an invoice:**
-```bash
-curl -X POST http://localhost:3000/api/v1/invoices \
-  -H "Content-Type: application/json" \
-  -d '{
-    "customer": {
-      "name": "Jane Smith",
-      "email": "jane@example.com",
-      "address": "456 Oak Ave, City, State 67890"
-    },
-    "lineItems": [
-      {
-        "description": "Consulting Services",
-        "quantity": 8,
-        "unitPrice": 150.00
-      }
-    ]
-  }'
-```
-
-2. **Get all invoices:**
-```bash
-curl http://localhost:3000/api/v1/invoices
-```
-
-3. **Get specific invoice:**
-```bash
-curl http://localhost:3000/api/v1/invoices/{invoice-id}
-```
-
-4. **Download PDF:**
-```bash
-curl -o invoice.pdf http://localhost:3000/api/v1/invoices/{invoice-id}/pdf
-```
+## Testing the API
 
 ### Using Postman
 
-Import the following collection:
 
 ```json
 {
@@ -238,7 +200,7 @@ Import the following collection:
 }
 ```
 
-## 🏗️ Architecture
+## Architecture
 
 ### System Design Flow
 
@@ -264,37 +226,10 @@ Storage (JSON File)
 4. **Controllers**: HTTP request handling
 5. **Modules**: Dependency injection and organization
 
-## 🚀 Deployment
+## Deployment
 
 ### Production Build
 ```bash
 npm run build
 npm start
 ```
-
-### Docker (Optional)
-```dockerfile
-FROM node:18-alpine
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci --only=production
-COPY dist ./dist
-EXPOSE 3000
-CMD ["node", "dist/main.js"]
-```
-
-## 📝 License
-
-This project is licensed under the ISC License.
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
-## 📞 Support
-
-For questions or issues, please open an issue in the repository. 
