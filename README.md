@@ -20,8 +20,8 @@ A comprehensive invoice generator API built with NestJS and TypeScript, featurin
 
 1. Clone the repository:
 ```bash
-git clone <your-repo-url>
-cd invoice-generator-api
+git clone https://github.com/anuj-cyberSec/invoice-project.git
+cd invoice-project
 ```
 
 2. Install dependencies:
